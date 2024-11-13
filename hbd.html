@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Agita</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .birthdayCard {
+      width: 300px;
+      height: 400px;
+      perspective: 2000px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .birthdayCard:hover .cardFront {
+      transform: rotateY(-180deg);
+    }
+    
+    .birthdayCard:hover .cardInside {
+      transform: rotateY(0);
+    }
+
+    .cardFront,
+    .cardInside {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 12px;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: transform 1s;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cardFront {
+      background: linear-gradient(135deg, #ff6f91, #ff9a9e);
+      color: #fff;
+      text-align: center;
+      transform: rotateY(0);
+      z-index: 2;
+    }
+
+    .cardInside {
+      background-color: #fff;
+      color: #333;
+      transform: rotateY(180deg);
+      z-index: 1;
+    }
+
+    .cardFront h2, .cardFront h3 {
+      font-family: 'Brush Script MT', cursive;
+      margin: 0;
+    }
+
+    .cardFront h2 {
+      font-size: 45px;
+    }
+
+    .cardFront h3 {
+      font-size: 28px;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .confetti div {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #ffd700;
+      opacity: 0.8;
+      animation: fall 2.5s infinite linear;
+    }
+
+    .confetti div:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .confetti div:nth-child(2) { left: 40%; animation-delay: 0.3s; }
+    .confetti div:nth-child(3) { left: 60%; animation-delay: 0.6s; }
+    .confetti div:nth-child(4) { left: 80%; animation-delay: 0.9s; }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(400px) rotate(360deg); }
+    }
+
+    .decorations {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      animation: float 2s infinite ease-in-out alternate;
+    }
+
+    .decorations div {
+      width: 12px;
+      height: 12px;
+      background: radial-gradient(circle, #ffead4, transparent);
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    .cake {
+      width: 80px;
+      height: 50px;
+      background-color: #f8b4d9;
+      border-radius: 12px 12px 0 0;
+      position: relative;
+      margin-top: 30px;
+      box-shadow: inset 0 -8px #f9c74f;
+      animation: bobble 1.5s infinite ease-in-out;
+    }
+
+    @keyframes bobble {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .candle {
+      position: absolute;
+      width: 8px;
+      height: 25px;
+      background: #fff;
+      left: 50%;
+      top: -25px;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+
+    .flame {
+      width: 10px;
+      height: 14px;
+      background-color: #ff9e7a;
+      border-radius: 50% 50% 0 0;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.6s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
+
+    .inside-text h3 {
+      font-size: 22px;
+      color: #ff6f91;
+      margin: 20px 0;
+    }
+
+    .inside-text p {
+      font-size: 16px;
+      text-align: center;
+      margin: 5px 0;
+      line-height: 1.6;
+    }
+
+    .inside-text .signature {
+      margin-top: 20px;
+      font-style: italic;
+      color: #ff6f91;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="birthdayCard">
+    <div class="cardFront">
+      <h3>Happy</h3>
+      <h2>Birthday!</h2>
+      <h3>To You</h3>
+      <br>
+      <h3>Agita Anggraeni</h3>
+      <div class="decorations">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="cake">
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+      </div>
+      <div class="confetti">
+        <div></div><div></div><div></div><div></div>
+      </div>
+    </div>
+
+    <div class="cardInside">
+      <div class="inside-text">
+        <h3>Happy Birthday!</h3>
+        <p>Agita Anggraeni,</p>
+        <p>Selamat Ulang Tahun, panjang umur sehat & selalu, semoga di tahun ini dapet bahagia yang lebih dari sebelumnya yaa. love u ♡♡♡</p>
+        <p class="signature">- Fardan</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
